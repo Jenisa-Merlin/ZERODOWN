@@ -90,7 +90,7 @@ def execute_queries():
         WHERE 
             h1.id <> h2.id 
             AND ABS(h1.listing_price - h2.listing_price) <= 1000 -- Price difference threshold
-            AND ABS(EXTRACT(epoch FROM h1.last_sold_date - h2.last_sold_date)) <= 3600; -- Within 30 days difference
+            AND ABS(EXTRACT(epoch FROM h1.last_sold_date - h2.last_sold_date)) <= 3600; 
             """
         absolute_duplicates = execute_query(connection, query_absolute_duplicates)
 
@@ -105,7 +105,7 @@ def execute_queries():
         WHERE 
             h1.id <> h2.id 
             AND ABS(h1.listing_price - h2.listing_price) <= 1000 -- Price difference threshold
-            AND ABS(EXTRACT(epoch FROM h1.last_sold_date - h2.last_sold_date)) > 3600; -- Within 30 days difference
+            AND ABS(EXTRACT(epoch FROM h1.last_sold_date - h2.last_sold_date)) > 3600; 
             """
         pseudo_duplicates = execute_query(connection, query_pseudo_duplicates)
 
@@ -279,7 +279,7 @@ def identify_incorrect_data(df):
     incorrect_data = incorrect_data[(incorrect_data['finished_sqft'] <= 0) | (incorrect_data['lot_size_sqft'] <= 0)]
     
     # Verify property age
-    incorrect_data = incorrect_data[(incorrect_data['year_built'] < 1800) | (incorrect_data['year_built'] > 2022)]  # Assuming the current year is 2022
+    incorrect_data = incorrect_data[(incorrect_data['year_built'] < 1800) | (incorrect_data['year_built'] > 2024)] 
 
     # Verify listing and selling prices
     incorrect_data = incorrect_data[(incorrect_data['listing_price'] <= 0) | (incorrect_data['last_sold_price'] <= 0)]
