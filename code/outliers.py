@@ -75,11 +75,19 @@ def visualize_outliers(df, outliers):
     plt.tight_layout()
     plt.show()
 
-
 # Function to identify homes with incorrect data
 def identify_incorrect_data(df):
     # Example: Identify homes where the number of bathrooms exceeds the number of bedrooms
     incorrect_data = df[df['bathrooms'] > df['bedrooms']]
+
+    # Check for unrealistic property sizes
+    incorrect_data = incorrect_data[(incorrect_data['finished_sqft'] <= 0) | (incorrect_data['lot_size_sqft'] <= 0)]
+    
+    # Verify property age
+    incorrect_data = incorrect_data[(incorrect_data['year_built'] < 1800) | (incorrect_data['year_built'] > 2022)]  # Assuming the current year is 2022
+
+    # Verify listing and selling prices
+    incorrect_data = incorrect_data[(incorrect_data['listing_price'] <= 0) | (incorrect_data['last_sold_price'] <= 0)]
 
     return incorrect_data
 
@@ -98,4 +106,4 @@ if __name__ == "__main__":
 
         # Display homes with incorrect data
         print("Homes with Incorrect Data:")
-        print(incorrect_data.head())
+        print(incorrect_data)

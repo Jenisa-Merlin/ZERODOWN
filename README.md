@@ -107,7 +107,12 @@ Attributes:
 - crawler: varchar(32) (source of the listing data)
 
 1) Range of attributes
-
+    *unique
+    *null or missing values
+    *numeric attributes
+    *correlation
+    *summary statistics
+    
 * Listing price: range of listing price to know the spread of property values
 * Finished sqft and Lot size sqft: distribution of property sizes
 * Bedrooms and bathrooms: variation in number of bedrooms and bathrooms
@@ -129,3 +134,6 @@ Attributes:
     * Time to Sale Analysis: Analyzing the distribution of time to sale for properties.
 
 4) Identify outlier homes and homes with incorrect data
+* analyse outliers using **z-score** 
+* visualize using **boxplots**
+* print incorrect data from predefined conditions
