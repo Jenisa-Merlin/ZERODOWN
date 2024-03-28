@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Results</title>
+</head>
+<body>
+    <h1>Data Analysis Results</h1>
+    <h2>Missing Values</h2>
+    <pre>{{ missing_values }}</pre>
+    
+    <h2>Unique Value Counts</h2>
+    {% for attribute, counts in unique_counts.items() %}
+        <h3>{{ attribute }}</h3>
+        <pre>{{ counts }}</pre>
+    {% endfor %}
+
+    <h2>Distribution of Numeric Attributes</h2>
+    <div>
+        <img src="{{ url_for('static', filename='finished_sqft_distribution.png') }}" alt="Distribution of Finished Sqft">
+        <img src="{{ url_for('static', filename='lot_size_sqft_distribution.png') }}" alt="Distribution of Lot Size Sqft">
+        <!-- Repeat for other numeric attributes -->
+    </div>
+
+    <h2>Correlation Matrix</h2>
+    <img src="{{ url_for('static', filename='correlation_matrix.png') }}" alt="Correlation Matrix">
+
+    <h2>Boxplots of Numeric Attributes</h2>
+    <img src="{{ url_for('static', filename='boxplots.png') }}" alt="Boxplots of Numeric Attributes">
+
+    <h2>Summary Statistics for Numeric Attributes</h2>
+    <pre>{{ stats }}</pre>
+</body>
+</html>
