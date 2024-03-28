@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlier Detection and Data Validation</title>
+</head>
+<body>
+    <h1>Outlier Detection and Data Validation</h1>
+
+    <h2>Outliers</h2>
+    <p>Outliers detected:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Column</th>
+                <th>Outlier</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for column, outlier in outliers.items() %}
+                <tr>
+                    <td>{{ column }}</td>
+                    <td>{{ outlier }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Incorrect Data</h2>
+    <p>Homes with incorrect data based on the predefined conditions given:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Home ID</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in incorrect_data.iterrows() %}
+                <tr>
+                    <td>{{ row['home_id'] }}</td>
+                    <td>{{ row['address'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

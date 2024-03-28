@@ -1,3 +1,7 @@
+# MILESTONE 2
+'''
+Identify outlier homes and homes with incorrect data
+'''
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -38,7 +42,7 @@ def fetch_data():
     try:
         # Fetch data from the home_info table
         df = pd.read_sql_query(
-            "SELECT * FROM home_info;",
+            "SELECT * FROM home_info WHERE listing_price > (SELECT AVG(listing_price) * 3 FROM home_info) OR listing_price < (SELECT AVG(listing_price) / 3 FROM home_info) OR finished_sqft > (SELECT AVG(finished_sqft) * 3 FROM home_info) OR finished_sqft < (SELECT AVG(finished_sqft) / 3 FROM home_info);",
             conn
         )
 
@@ -59,7 +63,7 @@ def identify_outliers(df):
 
     # Flag outliers based on z-score
     outliers = z_scores > outlier_threshold
-
+    print(outliers)
     return outliers
 
 # Function to visualize outliers
