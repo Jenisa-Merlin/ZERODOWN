@@ -150,4 +150,5 @@ homes
 Created a common table expression, from where similarity score is calculated using Euclidean distance b/w given home id and other homes and returning the top 10 homes
 
 # MILESTONE 5
-
+Price Estimation: Given home attributes(bed, bath, city/zipcode etc...) estimate price
+based on sold homes.
