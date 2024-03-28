@@ -142,13 +142,19 @@ Attributes:
 Homes Deduplication: Devise an scalable algorithm to identify duplicate homes.
 Duplicates can be classified into 2 types, identify both separately.
 ● Absolute duplicate - same home, listed in the market at almost same time.
+__SQL query retrieves addresses from the home_info table where there are pairs of listings with different IDs but the same address. It filters these pairs based on a price difference of $1000 or less and ensures the time difference between their last sold dates is within 3600 seconds (or 1 hour), indicating potential absolute duplicates.__
 ● Pseudo duplicate - same home, listed at different points in time
+__SQL query identifies pseudo duplicates in the home_info table by comparing listings with the same address but different IDs. It filters pairs based on a price difference threshold of $1000 and ensures they were listed more than 1 hour apart, revealing instances of the same property listed at different times.__
 
 # MILESTONE 4
 Home Comparables: Given a home id, devise an algorithm to provide a list of similar
 homes
 Created a common table expression, from where similarity score is calculated using Euclidean distance b/w given home id and other homes and returning the top 10 homes
 
+__SQL query retrieves the top 10 homes with the most similar attributes to a given input home (input_home). It calculates a similarity score for each home based on the Euclidean distance between the input home's attributes and those of other homes in the home_info table. The lower the similarity score, the more similar the home is to the input. The query then orders the results by similarity score, returning the top 10 closest matches.__
+
 # MILESTONE 5
 Price Estimation: Given home attributes(bed, bath, city/zipcode etc...) estimate price
 based on sold homes.
+
+__SQL query calculates the estimated price (estimated_price) for homes based on specified criteria such as the number of bedrooms, bathrooms, and market identifiers (city or zip code). It computes the average (AVG) of the last sold prices (last_sold_price) from the home_info table, filtering records where the bedrooms, bathrooms, and market identifiers match the provided values, and ensuring that the last sold price is not null.__
