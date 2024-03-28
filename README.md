@@ -40,7 +40,7 @@ market.sql
 market_geom.sql
 
 # MILESTONE 1
-ERD is attached
+ERD is drawn using paper. (no tools)
 
 * each market has one market_geom
 * each market has one home_info
