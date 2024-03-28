@@ -1,6 +1,14 @@
+# MILESTONE 3
+'''
+Absolute duplicate - same home, listed in the market at almost same time.
+Pseudo duplicate - same home, listed at different points in time
+'''
+
+# import necessary libraries
 import psycopg2
 import db
 
+# connect to database
 def connect_to_db():
     try:
         connection = db.connect_to_database()
@@ -8,6 +16,7 @@ def connect_to_db():
     except psycopg2.Error as e:
         print("Error connecting to PostgreSQL database:", e)
 
+# execute the query
 def execute_query(connection, query):
     try:
         cursor = connection.cursor()
@@ -18,7 +27,8 @@ def execute_query(connection, query):
     except psycopg2.Error as e:
         print("Error executing query:", e)
 
-def main():
+# function to find absoulte and pseudo duplicates
+def duplicates():
     connection = connect_to_db()
     if connection:
         # Query 1: Absolute duplicates
@@ -31,8 +41,8 @@ def main():
             home_info h2 ON h1.address = h2.address
         WHERE 
             h1.id <> h2.id 
-            AND ABS(h1.listing_price - h2.listing_price) <= 1000 -- Price difference threshold
-            AND ABS(EXTRACT(epoch FROM h1.last_sold_date - h2.last_sold_date)) <= 3600; -- Within 30 days difference
+            AND ABS(h1.listing_price - h2.listing_price) <= 1000 
+            AND ABS(EXTRACT(epoch FROM h1.last_sold_date - h2.last_sold_date)) <= 3600; 
             """
         absolute_duplicates = execute_query(connection, query_absolute_duplicates)
         print("Absolute Duplicates:")
@@ -58,4 +68,4 @@ def main():
         connection.close()
 
 if __name__ == "__main__":
-    main()
+    duplicates()

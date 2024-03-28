@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Results</title>
+</head>
+<body>
+    <h1>Query Results</h1>
+    
+    <h2>Absolute Duplicates:</h2>
+    <ul>
+        {% for address in absolute_duplicates %}
+            <li>{{ address[0] }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Pseudo Duplicates:</h2>
+    <ul>
+        {% for address in pseudo_duplicates %}
+            <li>{{ address[0] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
