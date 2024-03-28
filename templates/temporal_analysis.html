@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporal Analysis</title>
+</head>
+<body>
+    <h1>Temporal Analysis</h1>
+
+    <h2>Distribution of Temporal Dates</h2>
+    <div>
+        <img src="{{ url_for('static', filename='temporal_distribution.png') }}" alt="Distribution of Temporal Dates">
+        <h3>Listing Price Trend Over Time</h3>
+        <img src="{{ url_for('static', filename='temporal_price_trend.png') }}" alt="Listing Price Trend Over Time">
+
+        <h3>Seasonality in Listing Prices</h3>
+        <img src="{{ url_for('static', filename='seasonality_listing_prices.png') }}" alt="Seasonality in Listing Prices">
+
+        <h3>Distribution of Listing Contract Dates by Day of the Week</h3>
+        <img src="{{ url_for('static', filename='day_of_week_distribution.png') }}" alt="Distribution of Listing Contract Dates by Day of the Week">
+
+        <h3>Distribution of Time to Sale</h3>
+        <img src="{{ url_for('static', filename='time_to_sale_distribution.png') }}" alt="Distribution of Time to Sale">
+    </div>
+</body>
+</html>

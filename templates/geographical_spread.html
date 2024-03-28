@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geographical Spread Analysis</title>
+</head>
+<body>
+    <h1>Geographical Spread Analysis</h1>
+    <h2>Distribution of Markets</h2>
+    <img src="{{ url_for('static', filename='market_distribution.png') }}" alt="Distribution of Markets">
+    
+    <h2>Market Distribution by State</h2>
+    <img src="{{ url_for('static', filename='market_distribution_by_state.png') }}" alt="Market Distribution by State">
+
+    <h2>Area Covered by Each Market</h2>
+    <img src="{{ url_for('static', filename='market_areas.png') }}" alt="Area Covered by Each Market">
+</body>
+</html>
