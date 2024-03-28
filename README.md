@@ -137,3 +137,17 @@ Attributes:
 * analyse outliers using **z-score** 
 * visualize using **boxplots**
 * print incorrect data from predefined conditions
+
+# MILESTONE 3
+Homes Deduplication: Devise an scalable algorithm to identify duplicate homes.
+Duplicates can be classified into 2 types, identify both separately.
+● Absolute duplicate - same home, listed in the market at almost same time.
+● Pseudo duplicate - same home, listed at different points in time
+
+# MILESTONE 4
+Home Comparables: Given a home id, devise an algorithm to provide a list of similar
+homes
+Created a common table expression, from where similarity score is calculated using Euclidean distance b/w given home id and other homes and returning the top 10 homes
+
+# MILESTONE 5
+
