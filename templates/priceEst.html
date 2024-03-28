@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimated Price Calculator</title>
+</head>
+<body>
+    <h1>Estimated Price Calculator</h1>
+    <form method="POST" action="/price_estimation">
+        <label for="bedrooms">Bedrooms:</label>
+        <input type="number" id="bedrooms" name="bedrooms" required><br><br>
+
+        <label for="bathrooms">Bathrooms:</label>
+        <input type="number" id="bathrooms" name="bathrooms" required><br><br>
+
+        <label for="city_market_id">City Market ID:</label>
+        <input type="number" id="city_market_id" name="city_market_id" required><br><br>
+
+        <label for="zipcode_market_id">Zip Code Market ID:</label>
+        <input type="number" id="zipcode_market_id" name="zipcode_market_id" required><br><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>
