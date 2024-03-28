@@ -119,3 +119,13 @@ Attributes:
 * Visualize the distribution of markets using latitude and longitude
 * Analyse and visualize the spread of markets across different regions or states
 * Calculate and visualize Area covered by each market
+
+3) Temporal Spread
+* Analyze the distribution of Listing Contract Date, On Market Date, Off Market Date to understand listing durations and market trends over time.
+* additionally, 
+    * Time Series Analysis: Plotting trends of listing prices and last sold prices over time.
+    * Seasonality Analysis: Analyzing seasonal patterns in listing prices.
+    * Day of the Week Analysis: Analyzing the distribution of listing contract dates by day of the week.
+    * Time to Sale Analysis: Analyzing the distribution of time to sale for properties.
+
+4) Identify outlier homes and homes with incorrect data
