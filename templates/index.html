@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ heading }}</title>
+</head>
+<body>
+    <h1>{{ heading }}</h1>
+    <p>{{ description }}</p>
+    <h2>Milestones:</h2>
+    <ul>
+        {% for milestone in milestones %}
+            <li>{{ milestone }}</li>
+        {% endfor %}
+    </ul>
+    <div>
+        <button type="button">Milestone 1</button>
+        <button type="button" onclick="window.location.href='/eda'">Milestone 2</button>
+        <button type="button" onclick="window.location.href='/execute_queries'">Milestone 3</button>
+        <button type="button" onclick="window.location.href='/milestone4'">Milestone 4</button>
+        <button type="button" onclick="window.location.href='/milestone5'">Milestone 5</button>
+    </div>
+</body>
+</html>

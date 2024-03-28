@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploratory Data Analysis</title>
+</head>
+<body>
+    <h1>Exploratory Data Analysis</h1>
+
+    <h2>Missing Values</h2>
+    <p>{{ missing_values }}</p>
+
+    <h2>Unique Values and Counts</h2>
+    <h3>Name</h3>
+    <p>{{ unique_values_counts['name'] }}</p>
+
+    <h3>Market Level</h3>
+    <p>{{ unique_values_counts['market_level'] }}</p>
+
+    <h3>State</h3>
+    <p>{{ unique_values_counts['state'] }}</p>
+
+    <h3>City</h3>
+    <p>{{ unique_values_counts['city'] }}</p>
+
+    <h3>Zipcode</h3>
+    <p>{{ unique_values_counts['zipcode'] }}</p>
+
+    <h3>Neighborhood</h3>
+    <p>{{ unique_values_counts['neighborhood'] }}</p>
+
+    <h3>Neighborhood Source</h3>
+    <p>{{ unique_values_counts['neighborhood_source'] }}</p>
+
+    <h2>Duplicate Entries</h2>
+    <p>{{ duplicate_entries }}</p>
+
+    <h2>Correlation Matrix</h2>
+    <p>{{ correlation_matrix }}</p>
+
+    <h2>Summary Statistics</h2>
+    <p>{{ summary_statistics }}</p>
+</body>
+</html>
