@@ -1,3 +1,10 @@
+# MILESTONE 4
+'''
+Home Comparables: Given a home id, devise an algorithm to provide a list of similar
+homes.
+'''
+
+# import necessary libraries
 import psycopg2
 import db
 

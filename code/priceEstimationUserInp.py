@@ -1,3 +1,10 @@
+# MILESTONE 5
+'''
+Price Estimation: Given home attributes(bed, bath, city/zipcode etc...) estimate price
+based on sold homes.
+'''
+
+# import necessary libraries
 import psycopg2
 import db
 

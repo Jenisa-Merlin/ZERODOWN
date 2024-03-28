@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Search</title>
+</head>
+<body>
+    <h1>Home Search</h1>
+    <form method="POST" action="/home_comparables">
+        <label for="home_id">Home ID:</label>
+        <input type="text" id="home_id" name="home_id" required><br><br>
+
+        <label for="bedrooms">Bedrooms:</label>
+        <input type="text" id="bedrooms" name="bedrooms" required><br><br>
+
+        <label for="bathrooms">Bathrooms:</label>
+        <input type="text" id="bathrooms" name="bathrooms" required><br><br>
+
+        <label for="city_code">City Code:</label>
+        <input type="text" id="city_code" name="city_code" required><br><br>
+
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>

@@ -1,3 +1,4 @@
+# import necessary libraries
 import psycopg2
 
 # Database connection parameters
